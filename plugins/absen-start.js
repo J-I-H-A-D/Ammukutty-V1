@@ -2,15 +2,15 @@ let handler = async (m, { usedPrefix, text }) => {
     conn.absen = conn.absen ? conn.absen : {}
     let id = m.chat
     if (id in conn.absen) {
-        throw `_*Masih ada absen di chat ini!*_\n\n*${usedPrefix}hapusabsen* - untuk menghapus absen`
+        throw `_*There are still absences in this chat!*_\n\n*${usedPrefix}removeabsence* - to delete absence`
     }
     conn.absen[id] = [
-        m.reply(`Berhasil memulai absen!\n\n*${usedPrefix}absen* - untuk absen\n*${usedPrefix}cekabsen* - untuk mengecek absen\n*${usedPrefix}hapusabsen* - untuk menghapus data absen`),
+        m.reply(`Successfully started absent!\n\n*${usedPrefix}absent* - for absent\n*${usedPrefix}checkabsence* - to check attendance\n*${usedPrefix}delete absent* - to delete attendance data`),
         [],
         text
     ]
 }
-handler.help = ['mulaiabsen [teks]']
+handler.help = ['start absent [text]']
 handler.tags = ['absen']
 handler.command = /^(start|mulai)absen$/i
 handler.group = true
