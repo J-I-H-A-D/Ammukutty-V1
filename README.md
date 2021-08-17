@@ -16,9 +16,11 @@ apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
 git clone https://github.com/J-I-H-A-D/Ammukutty-V1
-cd wabot-aq
+cd Ammukutty-V1
 npm install
-npm update
+npm audit
+npm audit fix
+npm start
 ```
 
 ## INSTALL ON TERMUX WITH UBUNTU
